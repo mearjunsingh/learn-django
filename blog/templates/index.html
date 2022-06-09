@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% include 'includes/navbar.html' %}
+
 <div class="container mt-4">
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -9,21 +11,8 @@
 
         {% for blog in blogs %}
 
+        {% include 'includes/post-card.html' %}
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="{{ blog.image.url }}" class="card-img-top">
-                <div class="card-body">
-                    <a href="{% url 'single' blog.id %}">
-                        <h5 class="card-title">{{ blog.title }}</h5>
-                    </a>
-                    <p class="card-text">{{ blog.content }}</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">{{ blog.created_at }}</small>
-                </div>
-            </div>
-        </div>
 
         {% endfor %}
 

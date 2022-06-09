@@ -1,0 +1,11 @@
+<h3>Popular Posts</h3>
+
+<ul>
+    {% for post in popular_posts %}
+    <li>
+        <a href="{% url 'single' post.id %}">
+            {{ post.title }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

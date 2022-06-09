@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'includes/admin-navbar.html' %}
+
+<div class="container mt-4">
+
+
+
+    <form action="." method="post" novalidate>
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

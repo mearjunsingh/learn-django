@@ -1,0 +1,21 @@
+{% load humanize %}
+
+
+<div class="col">
+    <div class="card h-100">
+        <img src="{{ blog.image.url }}" class="card-img-top">
+        <div class="card-body">
+            <a href="{% url 'archive_page' %}?cat={{ blog.category.slug }}">
+                {{ blog.category.title }}
+            </a>
+
+            <a href="{% url 'single' blog.id %}">
+                <h5 class="card-title">{{ blog.title|truncatechars:10 }}</h5>
+            </a>
+            <p class="card-text">{{ blog.content|truncatechars:30 }}</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">{{ blog.created_at|naturaltime }}</small>
+        </div>
+    </div>
+</div>
