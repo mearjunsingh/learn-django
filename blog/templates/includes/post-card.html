@@ -3,7 +3,17 @@
 
 <div class="col">
     <div class="card h-100">
+
+        {% if blog.image %}
+
         <img src="{{ blog.image.url }}" class="card-img-top">
+
+        {% else %}
+
+        <img src="https://picsum.photos/200" class="card-img-top">
+
+        {% endif %}
+
         <div class="card-body">
             <a href="{% url 'archive_page' %}?cat={{ blog.category.slug }}">
                 {{ blog.category.title }}
@@ -16,6 +26,8 @@
         </div>
         <div class="card-footer">
             <small class="text-muted">{{ blog.created_at|naturaltime }}</small>
+            |
+            <small class="text-muted">{{ blog.views }}</small>
         </div>
     </div>
 </div>

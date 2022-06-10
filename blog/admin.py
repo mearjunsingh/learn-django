@@ -10,7 +10,7 @@ class BlogAdmin(admin.ModelAdmin):
     search_fields = ["title", "content"]
     # list_per_page = 1
     # date_hierarchy = "created_at"
-    list_editable = ["views"]
+    # list_editable = ["views"]
     list_filter = ["category"]
     save_on_top = True
 
