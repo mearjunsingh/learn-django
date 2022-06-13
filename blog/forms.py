@@ -18,9 +18,10 @@ class SearchForm(forms.Form):
 class AddPostForm(forms.ModelForm):
     class Meta:
         model = Blog
-        fields = ["title", "content", "category"]
+        fields = ["title", "content", "category", "image"]
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"}),
             "content": CKEditorWidget(),
             "category": forms.Select(attrs={"class": "form-control"}),
+            "image": forms.FileInput(attrs={"class": "form-control"}),
         }

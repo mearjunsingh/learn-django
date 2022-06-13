@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+
+{% block title %}
+{{ blog.title }} - Hamro Blog
+{% endblock %}
+
+
+
 {% block content %}
 
 {% include 'includes/navbar.html' %}
@@ -38,3 +45,11 @@
 </div>
 
 {% endblock%}
+
+
+
+{% block extrascripts %}
+<script>
+    console.log('hello')
+</script>
+{% endblock %}

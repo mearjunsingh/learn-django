@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 
+
+{% block title %}
+Homepage - Hamro Blog
+{% endblock %}
+
+
+
+
 {% block content %}
 
 {% include 'includes/navbar.html' %}
 
-<div class="container mt-4">
+<div class="container my-4">
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
@@ -18,9 +26,22 @@
 
 
     </div>
+
+    {% if blogs.has_previous %}
+
+    <a href="?page=`{{ blogs.previous_page_number }}" class="btn btn-primary">Previous</a>
+
+    {% endif %}
+
+    Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}
+
+    {% if blogs.has_next %}
+
+    <a href="?page={{ blogs.next_page_number }}" class="btn btn-primary">Next</a>
+
+    {% endif %}
 </div>
 
 </div>
-
 
 {% endblock %}
